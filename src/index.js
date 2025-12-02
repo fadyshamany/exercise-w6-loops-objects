@@ -14,52 +14,71 @@ const pokemons = [
   "Pidgey"
 ];
 
-// 1)
-// create a loop that prints all
-// the pokemons from the pokemons array
-// invoke the function to see that it works
+// 1) Loop that prints all pokemons
+function printPokemons() {
+  for (let i = 0; i < pokemons.length; i++) {
+    console.log(pokemons[i]);
+  }
+}
 
-// 2)
-// Create an object for the pokemon Pikachu.
-// it could have properties such as name, element,
-// strength, color, amountOfLegs or something like that.
+printPokemons(); // run it
 
-// 3)
-// console.log something like
-// 'Pikachu is a electricity pokemon with the strength of 32'
-// Selecting some of the information about your pikachu object.
 
-// 4)
-// Add the property stillToCatch: true to the Pikachu object.
+// 2) Create a Pikachu object
+let pikachu = {
+  name: "Pikachu",
+  element: "electricity",
+  strength: 32,
+  color: "yellow",
+  amountOfLegs: 2
+};
 
-// 5)
-// change the value of the key strength in the Pikachu object.
+// 3) Console log Pikachu info
+console.log(`${pikachu.name} is an ${pikachu.element} pokemon with the strength of ${pikachu.strength}`);
 
-// 6)
-// Delete a property from the Pikachu object.
 
-// 7)
-// Fill up this array with a few more pokemons.
-// It is an array with objects!
-// I made some suggestions
-// but feel free to change as you want.
+// 4) Add new property stillToCatch: true
+pikachu.stillToCatch = true;
+console.log(pikachu);
+
+
+// 5) Change the strength value
+pikachu.strength = 50;
+
+
+// 6) Delete a property
+delete pikachu.color;
+console.log(pikachu);
+
+
+// 7) Array with objects — add more pokemons if you want
 const moreAboutPokemons = [
   {
     name: "Bulbasaur",
-    element: "water",
+    element: "grass",
     strength: 13
   },
   {
     name: "Charmander",
     element: "fire",
     strength: 32
+  },
+  {
+    name: "Squirtle",
+    element: "water",
+    strength: 20
   }
 ];
 
-// 8)
-// Print out all the NAMES of the pokemons in this new array.
 
-// 9)
-// Print out something like
-// 'Bulbasaur is a water pokemon with the strength of 32'
-// Do this for all the pokemons.
+// 8) Print only the names
+moreAboutPokemons.forEach(pokemon => {
+  console.log(pokemon.name);
+});
+
+
+// 9) Print full sentences
+moreAboutPokemons.forEach(pokemon => {
+  console.log(`${pokemon.name} is a ${pokemon.element} pokemon with the strength of ${pokemon.strength}`);
+});
+
